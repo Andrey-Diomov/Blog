@@ -1,7 +1,6 @@
 package by.diomov.blog.service;
 
 import by.diomov.blog.dto.ArticleDTO;
-
 import java.util.List;
 
 public interface ArticleService {
@@ -13,7 +12,7 @@ public interface ArticleService {
 
     List<ArticleDTO> findByTitleContaining(String title);
 
-    ArticleDTO update (String id, ArticleDTO newArticleDTO);
+    ArticleDTO update(String id, ArticleDTO newArticleDTO);
 
     void deleteById(String id);
 }

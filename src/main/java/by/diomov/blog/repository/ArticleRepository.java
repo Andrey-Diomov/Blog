@@ -5,5 +5,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import by.diomov.blog.model.Article;
 
 public interface ArticleRepository extends MongoRepository<Article, String> {
-  List<Article> findByTitleContaining(String title);
+    List<Article> findByTitleContaining(String title);
 }
