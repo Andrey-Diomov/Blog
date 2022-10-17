@@ -1,6 +1,6 @@
 package by.diomov.blog.service.Impl;
 
-import by.diomov.blog.controller.exception.ArticleNotFoundException;
+import by.diomov.blog.exception.ArticleNotFoundException;
 import by.diomov.blog.dto.ArticleDTO;
 import by.diomov.blog.model.Article;
 import by.diomov.blog.repository.ArticleRepository;
@@ -8,9 +8,7 @@ import by.diomov.blog.mapper.ArticleMapper;
 import by.diomov.blog.service.ArticleService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-
 import static java.util.stream.Collectors.toList;
 
 @Service

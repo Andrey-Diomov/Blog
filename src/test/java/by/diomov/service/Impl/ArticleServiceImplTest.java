@@ -1,6 +1,6 @@
 package by.diomov.service.Impl;
 
-import by.diomov.blog.controller.exception.ArticleNotFoundException;
+import by.diomov.blog.exception.ArticleNotFoundException;
 import by.diomov.blog.dto.ArticleDTO;
 import by.diomov.blog.mapper.ArticleMapper;
 import by.diomov.blog.model.Article;
@@ -9,10 +9,8 @@ import by.diomov.blog.service.Impl.ArticleServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.modelmapper.ModelMapper;
-
 import java.util.Date;
 import java.util.Optional;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;

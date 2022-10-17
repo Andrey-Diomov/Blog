@@ -1,4 +1,4 @@
-package by.diomov.blog.controller.exception;
+package by.diomov.blog.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

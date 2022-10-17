@@ -1,10 +1,11 @@
 package by.diomov.blog.controller;
 
-import by.diomov.blog.controller.exception.WrongDataException;
+import by.diomov.blog.exception.WrongDataException;
 import by.diomov.blog.dto.ArticleDTO;
 import by.diomov.blog.service.ArticleService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
@@ -30,12 +31,14 @@ public class ArticleController {
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR')")
     public ArticleDTO getById(@PathVariable("id") String id) {
         return articleService.getById(id);
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
+    @PreAuthorize("hasRole('MODERATOR')")
     public ArticleDTO create(@RequestBody @Valid ArticleDTO articleDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             throw new WrongDataException(bindingResult);
@@ -45,12 +48,14 @@ public class ArticleController {
 
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
+    @PreAuthorize("hasRole('MODERATOR')")
     public ArticleDTO update(@PathVariable("id") String id, @RequestBody @Valid ArticleDTO articleDTO) {
         return articleService.update(id, articleDTO);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PreAuthorize("hasRole('MODERATOR')")
     public void deleteById(@PathVariable("id") String id) {
         articleService.deleteById(id);
     }
