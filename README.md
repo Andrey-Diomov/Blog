@@ -1,10 +1,4 @@
 # Blog
 
-Write a pet project for a blog.
-
-
-Setting up a project with :
-Spring security,
-Spring data,
-Mongo,
-Unit test.
+Для проверяющего! Проверил все запросы в  Postman.  Отправил задание и закралась мысль, что REST  не нужен был по заданию, а достаточно было протестировать в main))
+ 
